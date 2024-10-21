@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Poly2Tri;
 using System.Drawing;
 
 public class Visualistation : MonoBehaviour
@@ -9,7 +8,7 @@ public class Visualistation : MonoBehaviour
     public GameObject pointPrefab;
 
     private List<Vector3> points = new List<Vector3>();
-    private TriangulationData triangulationData;
+    //private TriangulationData triangulationData;
 
     void Start()
     {
@@ -39,23 +38,23 @@ public class Visualistation : MonoBehaviour
         var pts = new List<Point>(points.Count);
         foreach (var v in points)
         {
-            pts.Add(new Point((float)v.x, (float)v.z));
+            //pts.Add(new Point((float)v.x, (float)v.z));
         }
 
-        triangulationData = DelaunayTriangulation.CreateFromPointList(pts);
+        //triangulationData = DelaunayTriangulation.CreateFromPointList(pts);
 
         // Get all edges from the triangulation
-        List<Edge> edges = triangulationData.GetEdges();
+        //List<Edge> edges = triangulationData.GetEdges();
 
         // Draw lines between these points
-        foreach (var edge in edges)
+        //foreach (var edge in edges)
         {
             LineRenderer line = gameObject.AddComponent<LineRenderer>();
-            line.SetVertexCount(2);
-            line.SetPosition(0, points[edge.B].ToUnityVector());
-            line.SetPosition(1, points[edge.A].ToUnityVector());
-            line.startColor = Color.white;
-            line.endColor = Color.white;
+            //line.SetVertexCount(2);
+            //line.SetPosition(0, points[edge.B].ToUnityVector());
+            //line.SetPosition(1, points[edge.A].ToUnityVector());
+            //line.startColor = Color.white;
+            //line.endColor = Color.white;
         }
     }
 }

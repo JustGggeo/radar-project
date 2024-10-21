@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class testing : MonoBehaviour
 {
-    public double x, y, z, d, phi;
+    public static double x, y, z, d, phi;
     public static void Main(string[] args)
     {
         string filePath = Path.Combine(AppContext.BaseDirectory, "test.txt");
