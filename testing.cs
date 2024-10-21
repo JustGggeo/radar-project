@@ -47,10 +47,9 @@ public class testing : MonoBehaviour
     {
 
         double distance = Main.d;
-        Console.Write("Введите пространственный угол (в градусах): ");
-        double angle = Double.Parse(Console.ReadLine()) * Math.PI / 180.0; // переводим градусы в радианы
-        Console.Write("Введите координаты локатора (x, y, z): ");
-        Vector3 locatorPosition = new Vector3((float)double.Parse(Console.ReadLine()), (float)double.Parse(Console.ReadLine()), (float)double.Parse(Console.ReadLine()));
+        double angle = phi * Math.PI / 180.0; // переводим градусы в радианы
+        Vector3 location = new Vector3(x, y, z);
+        Vector3 locatorPosition = location;
 
         // Преобразование в направление
         Vector3 direction = new Vector3(locatorPosition.X + distance * Math.Cos(angle), locatorPosition.Y + distance * Math.Sin(angle), locatorPosition.Z);
@@ -58,8 +57,6 @@ public class testing : MonoBehaviour
         // Преобразование в декартовы координаты
         Vector3 position = direction;
 
-        // Вывод результата
-        Console.WriteLine($"Декартовы координаты: ({position.X}, {position.Y}, {position.Z})");
     }
 
 }
