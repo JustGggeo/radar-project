@@ -6,10 +6,10 @@ using UnityEngine;
 
 public class testing : MonoBehaviour
 {
-    static void Main(string[] args)
+    public double x, y, z, d, phi;
+    public static void Main(string[] args)
     {
         string filePath = Path.Combine(AppContext.BaseDirectory, "test.txt");
-        double x, y, z, d, phi;
 
         try
         {
